@@ -42,5 +42,7 @@ Overall time of the event is 3-4 hours plus lunch break at the canteen in the mi
 6. Implementation of the ALU.
 6. Final full check with final testbench.
 
+### Wrapping up note
 
-
+- Talk about Yosis and OpenROAD (LibreLane), show GDSII file with ALU using Tiny Tapeout with SKY130 cells.
+- Talk about opportunities of the [MPW MIET](https://mpw.miet.ru/) shuttle service.
