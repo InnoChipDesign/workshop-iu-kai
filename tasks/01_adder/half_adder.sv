@@ -1,4 +1,5 @@
-module half_adder (
+module half_adder
+(
     input  a,
     input  b,
 

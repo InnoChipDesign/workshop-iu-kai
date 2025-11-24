@@ -1,4 +1,5 @@
-module full_adder (
+module full_adder
+(
     input  carry_in,
     input  a,
     input  b,
