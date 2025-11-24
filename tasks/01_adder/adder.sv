@@ -5,4 +5,8 @@ module adder (
     output q5, q4, q3, q2, q1, q0
 );
 
+    // Task:
+    // Implement 5-bit adder using half_adder and full_adder instances
+
+
 endmodule

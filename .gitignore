@@ -215,3 +215,6 @@ output_files/
 
 /skywater-pdk
 /netlist.v
+
+a.out
+*.vcd

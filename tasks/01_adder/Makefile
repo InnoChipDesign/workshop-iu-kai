@@ -1,4 +1,4 @@
-.PHONY: help simulate sim-clean sim-build sim-run quartus synth upload
+.PHONY: help simulate sim-build sim-run sim-clean quartus synth upload
 
 help: ## Show common targets of the Makefile
 	@echo "Usage:"
@@ -10,19 +10,17 @@ help: ## Show common targets of the Makefile
 # Simulation
 # ------------------------------------------------------------------------------
 
-simulate: sim-clean sim-build sim-run ## Run simulation flow
+simulate: sim-build sim-run ## Run simulation flow
 
-# sim-clean:
-# 	rm -rf ./sim/verilator/output_files/
+sim-build:
+	iverilog -g2012 ./*.sv
 
-# sim-build: rtl/common_top.sv
-# 	verilator ${VFLAGS} -Irtl -Iinclude/basics-graphics-music/labs/common -cc $< --exe sim/verilator/simulate.cpp -o common_top.out \
-# 		-CFLAGS "${SDL_CFLAGS}" -LDFLAGS "${SDL_LDFLAGS}" --Mdir sim/verilator/output_files \
-# 		--timescale 1ns/1ps -Wno-fatal # -Wno-MULTIDRIVEN -Wno-LATCH
-# 	make -C ./sim/verilator/output_files -f Vcommon_top.mk
+sim-run: sim-build
+	vvp ./a.out
 
-# sim-run:
-# 	./sim/verilator/output_files/common_top.out
+sim-clean:
+	rm -f ./dump.vcd
+	rm -f ./a.out
 
 
 # ------------------------------------------------------------------------------
@@ -37,7 +35,7 @@ QUARTUS     := cd $(PROJECT_DIR) && quartus
 QUARTUS_SH  := cd $(PROJECT_DIR) && quartus_sh
 QUARTUS_PGM := cd $(PROJECT_DIR) && quartus_pgm
 
-# when we run quartus bins from WSL it can be installed on host W10
+# When we run quartus bins from WSL it can be installed on host W10
 # it this case we have to add .exe to the executed binary name
 ifdef WSL_DISTRO_NAME
  ifeq (, $(shell which $(QUARTUS)))
