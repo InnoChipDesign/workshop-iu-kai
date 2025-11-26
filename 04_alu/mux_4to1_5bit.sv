@@ -1,4 +1,4 @@
-module mux5bit
+module mux_4to1_5bit
 (
     input  [4:0] in0,
     input  [4:0] in1,

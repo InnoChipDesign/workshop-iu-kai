@@ -5,8 +5,9 @@ module alu
 
     input  [1:0] opcode,
 
+    output [4:0] result,
     output       overflow,
-    output [4:0] result
+    output       illegal_operation // Illegal OpCode
 );
 
 endmodule
