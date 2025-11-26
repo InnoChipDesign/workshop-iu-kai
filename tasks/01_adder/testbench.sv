@@ -12,7 +12,8 @@ module testbench;
         .a4 ( a4 ), .a3 ( a3 ), .a2 ( a2 ), .a1 ( a1 ), .a0 ( a0 ),
         .b4 ( b4 ), .b3 ( b3 ), .b2 ( b2 ), .b1 ( b1 ), .b0 ( b0 ),
 
-        .q5 ( q5 ), .q4 ( q4 ), .q3 ( q3 ), .q2 ( q2 ), .q1 ( q1 ), .q0 ( q0 )
+        .overflow ( ),
+        .q4 ( q4 ), .q3 ( q3 ), .q2 ( q2 ), .q1 ( q1 ), .q0 ( q0 )
     );
 
     assign { a4, a3, a2, a1, a0 } = a;
@@ -22,11 +23,9 @@ module testbench;
 
     task test
     (
-        input [4:0] t_a, t_b
+        input [4:0] t_a, t_b, t_sum,
+        input       overflow
     );
-        logic [5:0] t_sum;
-
-        t_sum = t_a + t_b;
 
         { a, b } = { t_a, t_b };
 
