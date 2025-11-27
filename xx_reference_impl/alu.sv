@@ -17,13 +17,15 @@ module alu
 
     wire [4:0] result_add, result_mult, res_equal5bit;
     wire       result_equal;
+    wire       overflow_add, overflow_mult, result_overflow;
 
     adder_5bit inst_add5bit (a, b, overflow_add,  result_add   );
     equality   inst_equal   (a, b,                result_equal );
     multiplier inst_mult    (a, b, overflow_mult, result_mult  );
 
+    assign overflow          = (opcode == 2'b00 & overflow_add) | (opcode == 2'b10 & overflow_mult);
     assign illegal_operation = opcode == 2'b11;
-    assign res_equal5bit = { 5 { result_equal } };
+    assign res_equal5bit     = { 4'b0, result_equal };
 
     mux_4to1_5bit inst_mux
     (
