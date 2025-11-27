@@ -9,6 +9,10 @@ module equality
     // Задание:
     // Реализовать модуль 5-ти битного сравнения на равенство
 
+    // START_SOLUTION
+
     assign equal = & ( a ~^ b );
+
+    // END_SOLUTION
 
 endmodule

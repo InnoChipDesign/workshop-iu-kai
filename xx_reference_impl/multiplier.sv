@@ -7,6 +7,11 @@ module multiplier
     output [4:0] out
 );
 
+    // Задание:
+    // Реализовать модуль 5-ти битного умножителя с флагом переполнения
+
+    // START_SOLUTION
+
     logic [4:0] and_res0, and_res1, and_res2, and_res3, and_res4;
 
     logic [9:0] ires0, ires1, ires2, ires3, ires4;
@@ -32,5 +37,7 @@ module multiplier
 
     assign overflow = | ( result[9:5] );
     assign out      =     result[4:0];
+
+    // END_SOLUTION
 
 endmodule

@@ -10,6 +10,8 @@ module adder
     // Задание:
     // Реализовать модуль 5-ти битного сумматора используя модули half_adder и full_adder
 
+    // START_SOLUTION
+
     wire c0, c1, c2, c3;
 
     half_adder ha1 ( a0, b0, q0, c0 );
@@ -17,5 +19,7 @@ module adder
     full_adder fa2 ( c1, a2, b2, q2, c2       );
     full_adder fa3 ( c2, a3, b3, q3, c3       );
     full_adder fa4 ( c3, a4, b4, q4, overflow );
+
+    // END_SOLUTION
 
 endmodule

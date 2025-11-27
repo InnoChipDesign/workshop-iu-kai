@@ -10,6 +10,11 @@ module mux_4to1_5bit
     output logic [4:0] result
 );
 
+    // Задание:
+    // Реализовать модуль 5-ти битного мультиплексора 4-в-1
+
+    // START_SOLUTION
+
     always_comb
     begin
         case (select)
@@ -19,5 +24,7 @@ module mux_4to1_5bit
             2'd3: result = in3;
         endcase
     end
+    
+    // END_SOLUTION
 
 endmodule

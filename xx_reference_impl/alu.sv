@@ -10,6 +10,11 @@ module alu
     output       illegal_operation // Illegal OpCode
 );
 
+    // Задание:
+    // Реализовать модуль АЛУ используя модули adder, equality, multiplier и mux_4to1_5bit
+
+    // START_SOLUTION
+
     wire [4:0] result_add, result_mult, res_equal5bit;
     wire       result_equal;
 
@@ -30,10 +35,11 @@ module alu
         .result ( result        )
     );
 
+    // END_SOLUTION
+
 endmodule
 
-
-
+// START_SOLUTION
 module adder_5bit
 (
     input  [4:0] a,
@@ -53,3 +59,4 @@ module adder_5bit
     );
 
 endmodule
+// END_SOLUTION
