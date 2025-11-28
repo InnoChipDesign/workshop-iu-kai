@@ -1,0 +1,13 @@
+{
+  "DESIGN_NAME": "asic_top",
+  "VERILOG_FILES": [
+      "adder.sv",
+      "equality.sv",
+      "full_adder.sv",
+      "half_adder.sv",
+      "multiplier.sv",
+      "mux_4to1_5bit.sv",
+      "alu.sv",
+      "asic_project/asic_top.sv"
+]
+}

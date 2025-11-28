@@ -88,11 +88,13 @@ upload: ## Upload output file to the FPGA (to program it)
 # Synthesis with LibreLane
 # ------------------------------------------------------------------------------
 
-# libralane-install:
+libralane-install:
+	pip install librelane
 # 	uv add librelane
 
 # librelane-get-pdk:
 # 	download pdk
 
-# synth-librelane: sky130_fd_sc_hd__tt_025C_1v80.lib
+synth-librelane:
+	librelane --dockerized ./asic_project/config.json
 # 	uv run librelane --pdk-root $HOME/.ciel ./designs/spm/config.json

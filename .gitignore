@@ -218,3 +218,5 @@ output_files/
 
 a.out
 *.vcd
+
+runs/
