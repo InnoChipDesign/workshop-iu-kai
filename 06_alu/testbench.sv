@@ -74,10 +74,10 @@ module testbench;
     initial
     begin
     `ifdef __ICARUS__
-            // Uncomment the following line
-            // to generate a VCD file and analyze it using GTKwave
+            // Раскомментируйте строку ниже для генерации VCD файла,
+            // который можно открыть в Surfer или GTKwave для анализа временной диаграммы
 
-            $dumpvars;
+            // $dumpvars;
     `endif
 
     test (  0,  0,  1);

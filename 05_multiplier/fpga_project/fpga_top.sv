@@ -18,14 +18,12 @@ module fpga_top
 
     assign { HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 } = '1;
 
-    alu inst_alu
+    multiplier inst_mult
     (
-        .a                 ( SW[9:5]   ),
-        .b                 ( SW[4:0]   ),
-        .opcode            ( key       ),
-        .result            ( LEDR[4:0] ),
-        .overflow          ( LEDR[6]   ),
-        .illegal_operation ( LEDR[9]   )
+        .a        ( SW[9:5]   ),
+        .b        ( SW[4:0]   ),
+        .out      ( LEDR[4:0] ),
+        .overflow ( LEDR[6]   )
     );
 
 endmodule

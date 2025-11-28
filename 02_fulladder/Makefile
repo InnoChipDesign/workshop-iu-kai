@@ -13,7 +13,8 @@ help: ## Show common targets of the Makefile
 simulate: sim-build sim-run ## Run simulation flow
 
 sim-build:
-	iverilog -g2012 ./*.sv
+	iverilog -g2012 ./*.sv 			   \
+		../01_halfadder/half_adder.sv
 
 sim-run: sim-build
 	vvp ./a.out
